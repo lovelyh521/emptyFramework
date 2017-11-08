@@ -37,16 +37,17 @@
         <property name="testWhileIdle" value="true" />
         <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
         <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <property name="timeBetweenLogStatsMillis" value="300000" />
         <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
         <property name="minEvictableIdleTimeMillis" value="25200000" />
         <!-- 打开removeAbandoned功能 -->
-        <!--<property name="removeAbandoned" value="true" />-->
+        <property name="removeAbandoned" value="true" />
         <!-- 1800秒，也就是30分钟 -->
-        <!--<property name="removeAbandonedTimeout" value="1800" />-->
+        <property name="removeAbandonedTimeout" value="1800" />
         <!-- 关闭abanded连接时输出错误日志 -->
-        <!--<property name="logAbandoned" value="true" />-->
+        <property name="logAbandoned" value="true" />
         <!-- 监控数据库 -->
-        <!--<property name="filters" value="mergeStat" />-->
+        <property name="filters" value="mergeStat" />
     </bean>
 
     <!-- myBatis文件 -->
