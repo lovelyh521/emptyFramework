@@ -2,8 +2,12 @@ package com.main.test.dao;
 
 import com.main.test.entity.User;
 
+import java.util.List;
+
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
+
+    List<User> selectAll();
 
     User selectByName(String name);
 
