@@ -1,23 +1,10 @@
 package com.main.test.dao;
 
 import com.main.test.entity.User;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
-public interface UserMapper {
-    int deleteByPrimaryKey(Integer id);
-
-    List<User> selectAll();
-
+public interface UserMapper extends Mapper<User>{
     User selectByName(String name);
-
-    int insert(User record);
-
-    int insertSelective(User record);
-
-    User selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
 }
