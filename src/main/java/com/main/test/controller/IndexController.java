@@ -18,7 +18,7 @@ public class IndexController {
 
     @Resource(name="IndexService")
     private IndexService indexService;
-    @RequestMapping("/hello")
+  @RequestMapping("/hello")
     public String  index(String name, Model model){
         User user = indexService.selectOne(name);
         System.out.println("user = " + user);
@@ -38,7 +38,7 @@ public class IndexController {
         ResultVo resultVo = new ResultVo();
         List<User> users = indexService.selectAll(page,pageSize);
         PageInfo<User> countryPageInfo = new PageInfo<User>(users);
-        resultVo.setData(users);
+//        resultVo.setData(users);
         resultVo.setPageInfo(countryPageInfo);
         resultVo.setStatus(1);
         return resultVo;

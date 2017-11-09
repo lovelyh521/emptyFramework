@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-  <!--<properties resource="config.properties"/>-->
+  <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
 
-  <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
-    <property name="beginningDelimiter" value="`"/>
-    <property name="endingDelimiter" value="`"/>
-    
-    <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+    <plugin type="com.main.test.util.MyPlugin">
       <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+      <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+      <property name="caseSensitive" value="true"/>
     </plugin>
-
+    <commentGenerator>
+      <property name="suppressAllComments" value="false" />
+    </commentGenerator>
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                    connectionURL="jdbc:mysql://localhost:3306/test?characterEncoding=utf8&amp;serverTimezone=UTC"
+                    connectionURL="jdbc:mysql://localhost:3306/test?characterEncoding=utf8&amp;serverTimezone=UTC&amp;useSSL=false"
                     userId="root"
                     password="bxlt123456">
     </jdbcConnection>
+    <!--实体类-->
+    <javaModelGenerator targetPackage="com.main.test.entity" targetProject="D:\src"/>
+    <!--映射文件-->
+    <sqlMapGenerator targetPackage="com.main.test.mapping"  targetProject="D:\src"/>
+    <!--dao层接口-->
+    <javaClientGenerator targetPackage="com.main.test.dao" targetProject="D:\src" type="XMLMAPPER" />
 
-    <javaModelGenerator targetPackage="com.main.test.entity" targetProject="/src/main/java"/>
-
-    <sqlMapGenerator targetPackage="com.main.test.mapping"  targetProject="/src/main/java"/>
-
-    <javaClientGenerator targetPackage="com.main.test.dao" targetProject="/src/main/java" type="XMLMAPPER" />
-
-    <table tableName="user" >
+    <table tableName="t_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
+           enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
       <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
     </table>
   </context>
