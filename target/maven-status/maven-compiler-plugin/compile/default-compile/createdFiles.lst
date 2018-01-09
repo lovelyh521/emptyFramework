@@ -1,0 +1,8 @@
+com\main\test\controller\IndexController.class
+com\main\test\util\Generator.class
+com\main\test\JsonVo\ResultVo.class
+com\main\test\service\IndexService.class
+com\main\test\dao\UserMapper.class
+com\main\test\service\impl\IndexServiceImpl.class
+com\main\test\entity\User.class
+com\main\test\util\MyPlugin.class
